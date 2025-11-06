@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Ocean Watch - 해양 오염 감시 시스템</title>
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+      color: #033E5A;
+    }
+    header {
+      background-color: #0277bd;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      background: #01579b;
+      padding: 10px 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #b3e5fc;
+    }
+    section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    h2 {
+      border-left: 6px solid #0277bd;
+      padding-left: 10px;
+      font-size: 1.5em;
+      margin-top: 40px;
+    }
+    .ai-section {
+      background: #f1f8e9;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    footer {
+      background: #0277bd;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 50px;
+      font-size: 0.9em;
+    }
+    button {
+      background-color: #0288d1;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #01579b;
+    }
+    .result-box {
+      margin-top: 20px;
+      background: #e1f5fe;
+      border-radius: 8px;
+      padding: 15px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>AI Ocean Watch 🌊</header>
+
+<nav>
+  <a href="#intro">소개</a>
+  <a href="#problem">문제 인식</a>
+  <a href="#ai">AI 해결방안</a>
+  <a href="#demo">AI 시뮬레이션</a>
+</nav>
+
+<section id="intro">
+  <h2>프로젝트 개요</h2>
+  <p>
+    해양공학의 관점에서, 해양 오염은 단순한 환경 문제가 아니라 해양 구조물의 부식, 항만 운영, 해양 생태계 붕괴 등 다양한 문제로 확산된다.  
+    본 웹페이지는 AI 기술을 활용하여 해양 오염 상황을 실시간으로 분석하고,  
+    오염 밀집 지역을 시각화함으로써 효과적인 정화 작업을 지원하는 시스템을 소개한다.
+  </p>
+</section>
+
+<section id="problem">
+  <h2>문제 인식</h2>
+  <p>
+    바다에 떠 있는 쓰레기의 80% 이상이 육상에서 유입되며,  
+    해류를 따라 이동하면서 해양 생태계를 위협하고 있다.  
+    그러나 넓은 바다를 사람이 직접 관찰하기는 어렵기 때문에,  
+    오염 지역을 자동으로 탐지하고 지도화할 수 있는 AI 시스템이 필요하다.
+  </p>
+</section>
+
+<section id="ai" class="ai-section">
+  <h2>AI 활용 방안</h2>
+  <p>
+    AI Ocean Watch는 위성 이미지와 드론 촬영 데이터를 기반으로  
+    해양 표면의 오염 패턴을 분석한다.  
+    딥러닝 알고리즘을 통해 해수 색상, 반사율, 형태를 인식하여  
+    미세플라스틱·기름띠·쓰레기 군집을 자동으로 식별한다.  
+    분석 결과는 지도 형태로 시각화되어,  
+    오염 정도에 따라 즉각적인 정화 작업을 유도한다.
+  </p>
+</section>
+
+<section id="demo">
+  <h2>AI 시뮬레이션 체험</h2>
+  <p>버튼을 눌러 AI가 분석한 해양 오염 예측 결과를 확인해보세요.</p>
+  <button onclick="runAI()">AI 분석 실행</button>
+  <div class="result-box" id="resultBox">
+    <h3>예측 결과 🌐</h3>
+    <p id="aiResult"></p>
+  </div>
+</section>
+
+<footer>
+  © 2025 AI Ocean Watch | Made by [당신의 이름] | 해양공학 기반 환경 프로젝트
+</footer>
+
+<script>
+  function runAI() {
+    const results = [
+      "동해 연안의 미세플라스틱 밀도가 평년 대비 22% 증가했습니다.",
+      "남해 항만 주변에서 석유계 오염물 검출 확률이 높게 나타났습니다.",
+      "서해안 지역은 조류 순환이 활발해 오염 확산 위험이 낮습니다.",
+      "제주 남방 해역에서 해양 부유 쓰레기 밀집 지역이 탐지되었습니다."
+    ];
+    const random = results[Math.floor(Math.random() * results.length)];
+    document.getElementById("aiResult").textContent = random;
+    document.getElementById("resultBox").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
